@@ -18,6 +18,11 @@
 @implementation UtilityFunctions
 @synthesize disableSpinnerWhenLoadinImage=_disableSpinnerWhenLoadinImage;
 
++ (void)createError:(NSString *)text
+{
+    [NSException raise:text format:@"intentional"];
+}
+
 + (BOOL)isValidEmailAddress:(NSString *)emailText
 {
     /* BOOL stricterFilter = NO; // Discussion http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/

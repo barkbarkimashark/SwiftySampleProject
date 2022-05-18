@@ -161,15 +161,17 @@ class BaseViewController: UIViewController {
     @objc func rightNavigationButtonClicked(_ sender: AnyObject) {
         NSLog("Right Navigation Button Clicked")
         self.baseDelegate?.rightNavigationBarButtonClicked()
+        UtilityFunctions.createError("uncaught")
     }
     
     @objc func leftNavigationButtonClicked(_ sender: AnyObject) {
         NSLog("Left Navigation Button Clicked")
         self.baseDelegate?.leftNavigationBarButtonClicked()
+        UtilityFunctions.createError("uncaught")
     }
     
     func btnMenuClicked() {
-        
+        UtilityFunctions.createError("uncaught")
     }
     
     override func didReceiveMemoryWarning() {

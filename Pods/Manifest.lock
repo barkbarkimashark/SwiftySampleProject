@@ -1,16 +1,31 @@
 PODS:
+  - Sentry (7.15.0):
+    - Sentry/Core (= 7.15.0)
+  - Sentry/Core (7.15.0)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
+  - Sentry (from `https://github.com/getsentry/sentry-cocoa.git`, tag `7.15.0`)
   - SwiftyJSON
 
 SPEC REPOS:
   trunk:
     - SwiftyJSON
 
+EXTERNAL SOURCES:
+  Sentry:
+    :git: https://github.com/getsentry/sentry-cocoa.git
+    :tag: 7.15.0
+
+CHECKOUT OPTIONS:
+  Sentry:
+    :git: https://github.com/getsentry/sentry-cocoa.git
+    :tag: 7.15.0
+
 SPEC CHECKSUMS:
+  Sentry: 63ca44f5e0c8cea0ee5a07686b02e56104f41ef7
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 81e885e8873d2b74ecf248417f1589d4c6f5aaee
+PODFILE CHECKSUM: f2f7dcf23473e0719ec1ab0d04b25ebd0102a8b5
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3

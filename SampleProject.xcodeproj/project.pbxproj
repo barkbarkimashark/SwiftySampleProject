@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3D7D8F28358112002A3968 /* ObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3D7D8E28358112002A3968 /* ObjC.m */; };
 		3259FA876592B6D458DF4D7F /* Pods_SampleProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39B8D0D5CFCC0E104C53620D /* Pods_SampleProject.framework */; };
 		38CC628CB558068E49A2ABBB /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CC6FD97C19746843590E83 /* Emoji.swift */; };
 		38CC6745A951CDB4CDAE8B33 /* SPBannedCharsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CC68D90BCB7705A4C91092 /* SPBannedCharsTextField.swift */; };
@@ -135,6 +136,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F3D7D8D28358112002A3968 /* ObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjC.h; sourceTree = "<group>"; };
+		0F3D7D8E28358112002A3968 /* ObjC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjC.m; sourceTree = "<group>"; };
 		38CC64AF2FF35A5F60B44301 /* SPAllowedCharsTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAllowedCharsTextField.swift; sourceTree = "<group>"; };
 		38CC659ADF264EDC06566BBF /* SPStrikeThroughLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPStrikeThroughLabel.swift; sourceTree = "<group>"; };
 		38CC68D90BCB7705A4C91092 /* SPBannedCharsTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBannedCharsTextField.swift; sourceTree = "<group>"; };
@@ -440,6 +443,8 @@
 		8EBD2CC41B566A6B00741E4B /* UtilityFunctions */ = {
 			isa = PBXGroup;
 			children = (
+				0F3D7D8D28358112002A3968 /* ObjC.h */,
+				0F3D7D8E28358112002A3968 /* ObjC.m */,
 				955FA9761C845F600020027A /* UtilityFunctions.h */,
 				955FA9771C845F600020027A /* UtilityFunctions.m */,
 				952CF37B1C857C7A00CB80F6 /* UtilityHelper.swift */,
@@ -948,6 +953,7 @@
 				8EBD2C601B5667F200741E4B /* Frameworks */,
 				8EBD2C611B5667F200741E4B /* Resources */,
 				1ABD48E442CFF2B64DCE3058 /* [CP] Embed Pods Frameworks */,
+				0F326DF528356F5B00842AA7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1012,6 +1018,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0F326DF528356F5B00842AA7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which sentry-cli >/dev/null; then\nexport SENTRY_ORG=gilberts-garage\nexport SENTRY_PROJECT=swift-starter\nexport SENTRY_AUTH_TOKEN=5c1722c6fbbd42e5a8299ab856b27cef38c450c62061412db42f48b9617006ed\nERROR=$(sentry-cli upload-dif \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+		};
 		1ABD48E442CFF2B64DCE3058 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1019,10 +1043,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleProject/Pods-SampleProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1161,6 +1187,7 @@
 				953E5CF61EB84A7700CAC08A /* MORoutes.swift in Sources */,
 				95A8BB651E2657C600A0F461 /* UIViewControllerExtensions.swift in Sources */,
 				95A8BB581E2657C600A0F461 /* UIImageViewExtensions.swift in Sources */,
+				0F3D7D8F28358112002A3968 /* ObjC.m in Sources */,
 				95A8BB5B1E2657C600A0F461 /* UINavigationControllerExtensions.swift in Sources */,
 				955FA9711C845F4E0020027A /* UITextField+Additions.m in Sources */,
 				95481E931F3605790076FDC6 /* SPOvalButton.swift in Sources */,
@@ -1313,7 +1340,7 @@
 				CLANG_ENABLE_MODULE_DEBUGGING = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = V3DD866277;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;

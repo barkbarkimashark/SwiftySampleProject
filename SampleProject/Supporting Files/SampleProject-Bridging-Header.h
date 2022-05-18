@@ -21,5 +21,6 @@
 #import "UIViewController+Helper.h"
 
 #import "SampleStorageHelper.h"
+#import "ObjC.h"
 
 #endif /* SampleProject_Bridging_Header_h */

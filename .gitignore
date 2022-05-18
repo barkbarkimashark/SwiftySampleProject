@@ -1,2 +1,11 @@
 
 SampleProject.xcworkspace/xcuserdata/zeeshanhaider.xcuserdatad/UserInterfaceState.xcuserstate
+.DS_STORE
+
+# from https://github.com/github/gitignore/blob/main/Global/Xcode.gitignore
+## User settings
+xcuserdata/
+
+## Xcode 8 and earlier
+*.xcscmblueprint
+*.xccheckout

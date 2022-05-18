@@ -26,6 +26,8 @@ typedef void(^UFAPIResponse)(APIResponse* apiResponse );
 //@property (copy) void (^completionBlock)(UIAlertView* alertView, NSInteger buttonIndex);
 @property (nonatomic, assign) BOOL disableSpinnerWhenLoadinImage;
 
++ (void)createError:(NSString *)text;
+
 + (BOOL)isValidEmailAddress:(NSString *)emailText;
 + (BOOL)isValidateAlphabetWithWhiteSpace:(NSString *)checkString;
 

@@ -7,4 +7,5 @@ target 'SampleProject' do
 
   # Pods for SampleProject
 pod 'SwiftyJSON'
+pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '7.15.0'
 end

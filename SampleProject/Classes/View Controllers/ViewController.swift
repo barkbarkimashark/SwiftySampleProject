@@ -7,6 +7,7 @@
 //
 import UIKit
 import Foundation
+import Sentry
 
 
 class ViewController: UIViewController {//,UITableViewDelegate,UITableViewDataSource
@@ -95,6 +96,12 @@ class ViewController: UIViewController {//,UITableViewDelegate,UITableViewDataSo
     
     func textFieldDidBeginEditing(textField: UITextField) {
         
+    }
+    
+    @IBAction func sendMessage(_ sender: Any) {
+        let error = NSError(domain: "YourErrorDomain", code: 0, userInfo: nil)
+        SentrySDK.capture(error: error)
+//        SentrySDK.capture(message: "My first test message")
     }
     
     
